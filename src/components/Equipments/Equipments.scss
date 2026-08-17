@@ -1,0 +1,196 @@
+.equipment {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 160px 8vw;
+
+  background: #111;
+
+  color: #fff;
+
+  &__header {
+    display: grid;
+
+    grid-template-columns: 1fr 2fr 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 140px;
+  }
+
+  &__number {
+    align-self: start;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    opacity: 0.45;
+  }
+
+  h2 {
+    margin: 0;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(80px, 9vw, 142px);
+
+    font-weight: 400;
+
+    line-height: 0.82;
+
+    letter-spacing: -0.02em;
+
+    text-transform: uppercase;
+
+    color: rgb(218, 218, 218);
+  }
+
+  &__header > p {
+    align-self: end;
+
+    max-width: 300px;
+
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  &__list {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  &__item {
+    display: grid;
+
+    grid-template-columns: 100px 1fr auto;
+
+    align-items: center;
+
+    gap: 40px;
+
+    min-height: 190px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    transition:
+      padding 0.4s ease,
+      background 0.4s ease;
+
+    &:hover {
+      padding-left: 30px;
+
+      background: rgba(255, 255, 255, 0.025);
+    }
+  }
+
+  &__item-number {
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.35;
+  }
+
+  &__item-info {
+    span {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-size: 10px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      opacity: 0.4;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: clamp(45px, 5vw, 80px);
+
+      font-weight: 400;
+
+      line-height: 0.9;
+
+      text-transform: uppercase;
+    }
+
+    p {
+      max-width: 400px;
+
+      margin: 0;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__item-action {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0.6;
+
+    background-color: transparent;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+  }
+
+  &__arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    background-color: #2e2d2d;
+
+    border: 1px solid rgba(24, 23, 23, 0.25);
+
+    border-radius: 50%;
+
+    font-size: 16px;
+
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
+  }
+
+  &__item:hover &__arrow {
+    transform: translate(3px, -3px);
+
+    background: #fff;
+
+    color: #111;
+  }
+}

@@ -1,0 +1,21 @@
+.home-placeholder {
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #171717;
+  color: white;
+
+  span {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: #c27a0d;
+  }
+
+  &:nth-child(even) {
+    background: #f4f3ef;
+    color: #171717;
+  }
+}

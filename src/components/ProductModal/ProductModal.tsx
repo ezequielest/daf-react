@@ -1,0 +1,131 @@
+import { useEffect } from "react";
+import type { EquipmentItem } from "../Equipments/Equipments";
+import "./ProductModal.scss";
+import TresDDisplayFBX from "../TresDDisplayFBX/TresDDisplayFBX";
+
+interface ProductModalProps {
+  product: EquipmentItem | null;
+  onClose: () => void;
+}
+
+function ProductModal({
+  product,
+  onClose,
+}: ProductModalProps) {
+  useEffect(() => {
+    if (!product) return;
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [product]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
+    };
+  }, [onClose]);
+
+  if (!product) return null;
+
+  return (
+    <div
+      className="product-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-modal-title"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) {
+          onClose();
+        }
+      }}
+    >
+      <div className="product-modal__content">
+        <button
+          className="product-modal__close"
+          type="button"
+          onClick={onClose}
+          aria-label="Cerrar"
+        >
+          ×
+        </button>
+
+        <div className="product-modal__visual">
+          <div className="product-modal__placeholder">
+              <TresDDisplayFBX 
+                url={product.modelUrl}
+                modelPosition={[0, -220, 0]}
+                modelRotation={[0, Math.PI / 4 , 0]}
+                modelScale={1}
+                modelPivot={[-42.6866, -1.8881, 34.6906]}
+                rotationSpeed={0.005}/>
+          </div>
+        </div>
+
+        <div className="product-modal__info">
+          <span className="product-modal__category">
+            {product.category}
+          </span>
+
+          <h2 id="product-modal-title">
+            {product.name}
+          </h2>
+
+          <p className="product-modal__description">
+            {product.description}
+          </p>
+
+          <div className="product-modal__specs">
+            <div>
+              <span>Capacidad</span>
+              <strong>{product.capacity}</strong>
+            </div>
+
+            <div>
+              <span>Potencia</span>
+              <strong>{product.power}</strong>
+            </div>
+
+            <div>
+              <span>Dimensiones</span>
+              <strong>{product.dimensions}</strong>
+            </div>
+          </div>
+
+          <div className="product-modal__features">
+            <span>Características</span>
+
+            <ul>
+              {product.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+
+          <button
+            className="product-modal__cta"
+            type="button"
+          >
+            Solicitar asesoramiento
+            <span>↗</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ProductModal;

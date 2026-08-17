@@ -1,0 +1,328 @@
+.argentina-map {
+  width: 100%;
+
+  padding: 160px 8vw;
+
+  background: #f4f4f2;
+
+  color: #111;
+
+  overflow: hidden;
+
+  &__header {
+    display: grid;
+
+    grid-template-columns: 1fr 2fr 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 100px;
+
+    > span {
+      font-size: 11px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      opacity: 0.45;
+    }
+
+    h2 {
+      margin: 0;
+
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: clamp(80px, 9vw, 142px);
+
+      font-weight: 400;
+
+      line-height: 0.78;
+
+      text-transform: uppercase;
+    }
+
+    > p {
+      align-self: end;
+
+      max-width: 300px;
+
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      color: rgba(17, 17, 17, 0.55);
+    }
+  }
+
+  &__content {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+  }
+
+  &__visual {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    img {
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      opacity: 0.85;
+
+      filter: grayscale(1);
+    }
+  }
+
+  &__point {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 12px;
+    height: 12px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #c27a0d;
+
+    transform: translate(-50%, -50%);
+
+    cursor: pointer;
+
+    box-shadow:
+      0 0 0 5px rgba(194, 122, 13, 0.15),
+      0 0 20px rgba(194, 122, 13, 0.3);
+
+    &:hover {
+      .argentina-map__tooltip {
+        opacity: 1;
+
+        transform: translate(-50%, -10px);
+      }
+    }
+  }
+
+  &__pulse {
+    position: absolute;
+
+    inset: -6px;
+
+    border: 1px solid rgba(194, 122, 13, 0.5);
+
+    border-radius: 50%;
+
+    animation: argentinaPulse 2s infinite;
+  }
+
+  &__tooltip {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 140px;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(17, 17, 17, 0.1);
+
+    background: #111;
+
+    color: #fff;
+
+    text-align: left;
+
+    opacity: 0;
+
+    transform: translate(-50%, 0);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+
+    strong {
+      font-size: 12px;
+    }
+
+    small {
+      font-size: 10px;
+
+      opacity: 0.5;
+    }
+  }
+
+  &__locations {
+    align-self: stretch;
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  &__stats {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    padding-bottom: 35px;
+
+    border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+
+    > div {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 5px;
+
+      &:first-child {
+        border-right: 1px solid rgba(17, 17, 17, 0.15);
+      }
+    }
+
+    strong {
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 70px;
+
+      font-weight: 400;
+
+      line-height: 0.8;
+    }
+
+    span {
+      font-size: 10px;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+
+      opacity: 0.45;
+    }
+  }
+
+  &__list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 20px;
+  }
+
+  &__location {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+
+    > span {
+      font-size: 9px;
+
+      opacity: 0.3;
+    }
+
+    div {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 2px;
+    }
+
+    strong {
+      font-size: 11px;
+
+      font-weight: 500;
+    }
+
+    small {
+      font-size: 9px;
+
+      opacity: 0.45;
+    }
+  }
+}
+
+@keyframes argentinaPulse {
+  0% {
+    transform: scale(0.7);
+
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(1.8);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.8);
+
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .argentina-map {
+    &__header {
+      grid-template-columns: 1fr;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+    }
+
+    &__visual {
+      max-width: 550px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .argentina-map {
+    padding: 100px 5vw;
+
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__stats {
+      strong {
+        font-size: 55px;
+      }
+    }
+  }
+}

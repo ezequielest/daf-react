@@ -1,0 +1,257 @@
+@use "../../styles/variables" as *;
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background:     radial-gradient(
+      circle at 72% 45%,
+      rgb(255, 255, 255) 0%,
+      rgba(247, 244, 244, 0.789) 30%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(126, 110, 110, 0.12) 0%,
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #f6f5f7 0%,
+      #cdcccc93 45%,
+      #b9b8b89c 100%
+    );
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+
+    background-image:
+      linear-gradient(
+        rgba(0, 0, 0, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.035) 1px,
+        transparent 1px
+      );
+
+    background-size: 80px 80px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    height: 100svh;
+    padding-top: 0px;
+  }
+
+  &__content {
+    max-width: 650px;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    color: $color-primary;
+
+    &::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+  }
+
+  h1 {
+    font-size: clamp(58px, 6vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+    font-weight: 700;
+
+    span {
+      color: $color-primary;
+    }
+  }
+
+  p {
+    max-width: 480px;
+    margin-top: 32px;
+
+    font-size: 17px;
+    line-height: 1.6;
+    color: $color-text-muted;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 38px;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 15px 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+      background $transition-fast,
+      color $transition-fast,
+      transform $transition-fast;
+
+    &--primary {
+      background: $color-dark;
+      color: white;
+
+      &:hover {
+        background: $color-primary;
+        transform: translateY(-2px);
+      }
+    }
+
+    &--secondary {
+      border: 1px solid rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        background: white;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  &__product {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 600px;
+  }
+
+  &__product-label {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+
+    span {
+      color: $color-primary;
+    }
+  }
+
+  &__product-placeholder {
+    width: min(100%, 620px);
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(100% - 48px, $container-width);
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+
+    color: $color-text-muted;
+
+    strong {
+      margin-left: 8px;
+      color: $color-primary;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    &__container {
+      grid-template-columns: 1fr;
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+    &__product {
+      height: 400px;
+    }
+
+    &__product-placeholder {
+      max-width: 400px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    h1 {
+      font-size: 54px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    &__actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__product {
+      height: 320px;
+    }
+
+    &__bottom {
+      display: none;
+    }
+  }
+}
