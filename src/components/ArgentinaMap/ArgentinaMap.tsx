@@ -1,6 +1,33 @@
 import "./ArgentinaMap.scss";
 import argentinaMap from "./argentina.svg";
 
+interface Service {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const services: Service[] = [
+  {
+    number: "01",
+    title: "Asesoramiento técnico",
+    description:
+      "Acompañamos cada proyecto para encontrar la solución más adecuada según las necesidades de cada instalación.",
+  },
+  {
+    number: "02",
+    title: "Repuestos",
+    description:
+      "Disponibilidad de repuestos para mantener los equipos operativos y extender su vida útil.",
+  },
+  {
+    number: "03",
+    title: "Soporte remoto",
+    description:
+      "Asistencia a distancia para resolver consultas técnicas y acompañar el funcionamiento de los equipos.",
+  }
+];
+
 interface Location {
   name: string;
   province: string;
@@ -86,21 +113,13 @@ const locations: Location[] = [
 function ArgentinaMap() {
   return (
     <section className="argentina-map">
+      <span className="argentina-map__number">06 / DAF EN ARGENTINA</span>
       <div className="argentina-map__header">
-        <span>06 / DAF EN ARGENTINA</span>
 
         <h2>
-          DAF
-          <br />
-          llega
-          <br />
-          más lejos.
+          DAF, presente en todo el país. 
         </h2>
 
-        <p>
-          Nuestros equipos ya están trabajando en
-          diferentes puntos del país.
-        </p>
       </div>
 
       <div className="argentina-map__content">
@@ -134,39 +153,28 @@ function ArgentinaMap() {
 
         </div>
 
-        <div className="argentina-map__locations">
+        <div className="after-sales__services">
 
-          <div className="argentina-map__stats">
-            <div>
-              <strong>12</strong>
-              <span>destinos</span>
-            </div>
+          {services.map((service) => (
+            <article
+              className="after-sales__service"
+              key={service.number}
+            >
 
-            <div>
-              <strong>7</strong>
-              <span>provincias</span>
-            </div>
-          </div>
+              <span className="after-sales__number">
+                {service.number}
+              </span>
 
-          <div className="argentina-map__list">
+              <div className="after-sales__service-content">
 
-            {locations.map((location, index) => (
-              <div
-                className="argentina-map__location"
-                key={location.name}
-              >
-                <span>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <h4>{service.title}</h4>
 
-                <div>
-                  <strong>{location.name}</strong>
-                  <small>{location.province}</small>
-                </div>
+                <p>{service.description}</p>
+
               </div>
-            ))}
 
-          </div>
+            </article>
+          ))}
 
         </div>
 

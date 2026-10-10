@@ -51,9 +51,7 @@ function Footer() {
           </span>
 
           <p>
-            Mar del Plata
-            <br />
-            Argentina
+            Mar del Plata, Argentina
           </p>
 
         </div>

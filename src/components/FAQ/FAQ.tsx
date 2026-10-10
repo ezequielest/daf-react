@@ -60,10 +60,9 @@ function FAQ() {
 
   return (
     <section className="faq" id="faq">
-
+        <span className="faq__number">09 / FAQ</span>
       <div className="faq__header">
 
-        <span>09 / FAQ</span>
 
         <h2>
           Preguntas

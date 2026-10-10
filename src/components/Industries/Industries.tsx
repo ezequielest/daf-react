@@ -8,6 +8,33 @@ interface Industry {
   icon: string;
 }
 
+interface SolutionStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const solutionSteps: SolutionStep[] = [
+  {
+    number: "01",
+    title: "Analizamos",
+    description:
+      "Entendemos el espacio, la cantidad de usuarios y las condiciones de trabajo.",
+  },
+  {
+    number: "02",
+    title: "Diseñamos",
+    description:
+      "Definimos las características del equipo según las necesidades específicas del proyecto.",
+  },
+  {
+    number: "03",
+    title: "Fabricamos",
+    description:
+      "Desarrollamos el equipamiento en Argentina con foco en durabilidad y eficiencia.",
+  }
+];
+
 const industries: Industry[] = [
   {
     number: "01",
@@ -27,7 +54,7 @@ const industries: Industry[] = [
     number: "03",
     title: "Esquí",
     description:
-      "Secado eficiente para equipamiento utilizado durante toda la jornada.",
+      "Más equipos disponibles, mayor rotación y rentabilidad.",
     icon: "fluent-mdl2:ski-resorts",
   },
   {
@@ -46,34 +73,30 @@ const industries: Industry[] = [
   },
   {
     number: "06",
-    title: "Otros sectores",
+    title: "A tu medida",
     description:
-      "Desarrollamos soluciones específicas para diferentes necesidades.",
-    icon: "+",
+      "Diseñamos la solución que necesitas. ¡Consultanos!",
+    icon: "mdi:plus",
   },
 ];
 
 function Industries() {
   return (
     <section className="industries" id="industrias">
-      <div className="industries__header">
         <span className="industries__number">
           04 / INDUSTRIAS
         </span>
+      <div className="industries__header">
 
         <div>
           <h2>
-            Soluciones
-            <br />
-            para cada
-            <br />
-            industria.
+            Equipamiento para<br></br>cada industria.
           </h2>
         </div>
 
         <p>
-          Nuestros equipos se adaptan a diferentes
-          industrias, espacios y condiciones de trabajo.
+          <b>DAF responde en entornos exigentes.</b><br></br>
+          Nuestros equipos se adaptan a diferentes sectores, espacios y condiciones de trabajo, ofreciendo soluciones de secado confiables para cada operación.
         </p>
       </div>
 
@@ -97,12 +120,41 @@ function Industries() {
               <p>{industry.description}</p>
             </div>
 
-            <span className="industry-card__arrow">
+            {/* <span className="industry-card__arrow">
               ↗
-            </span>
+            </span> */}
           </article>
         ))}
       </div>
+      <div className="solutions__header">
+        <h3>
+        Cuando un equipo estándar no alcanza, desarrollamos una solución adaptada a las necesidades de cada proyecto. 
+        </h3>
+      </div>
+
+      <div className="solutions__process">
+        {solutionSteps.map((step, index) => (
+          <div
+            className="solution-step"
+            key={step.number}
+          >
+            <div className="solution-step__top">
+              <span className="solution-step__number">
+                {step.number}
+              </span>
+
+              {index < solutionSteps.length - 1 && (
+                <span className="solution-step__line" />
+              )}
+            </div>
+
+            <h3>{step.title}</h3>
+
+            <p>{step.description}</p>
+          </div>
+        ))}
+      </div>
+
     </section>
   );
 }

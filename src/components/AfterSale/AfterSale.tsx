@@ -15,34 +15,16 @@ const services: Service[] = [
   },
   {
     number: "02",
-    title: "Mantenimiento",
-    description:
-      "Mantenemos los equipos en condiciones óptimas para garantizar su funcionamiento y prolongar su vida útil.",
-  },
-  {
-    number: "03",
-    title: "Reparaciones",
-    description:
-      "Servicio técnico para resolver fallas y recuperar rápidamente el funcionamiento del equipo.",
-  },
-  {
-    number: "04",
     title: "Repuestos",
     description:
       "Disponibilidad de repuestos para mantener los equipos operativos y extender su vida útil.",
   },
   {
-    number: "05",
+    number: "03",
     title: "Soporte remoto",
     description:
       "Asistencia a distancia para resolver consultas técnicas y acompañar el funcionamiento de los equipos.",
-  },
-  {
-    number: "06",
-    title: "Garantía",
-    description:
-      "Respaldamos nuestros equipos y acompañamos al cliente durante todo el período de garantía.",
-  },
+  }
 ];
 
 function AfterSales() {

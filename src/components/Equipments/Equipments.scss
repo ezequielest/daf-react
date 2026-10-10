@@ -10,16 +10,15 @@
 
   &__header {
     display: grid;
-
-    grid-template-columns: 1fr 2fr 1fr;
-
+    grid-template-columns: 2fr;
     gap: 40px;
-
     margin-bottom: 140px;
   }
 
   &__number {
     align-self: start;
+    margin-bottom: 80px;
+    display: block;
 
     font-size: 12px;
     font-weight: 500;
@@ -36,7 +35,9 @@
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(80px, 9vw, 142px);
+    text-align: left;
+
+    font-size: clamp(48px, 7vw, 82px);
 
     font-weight: 400;
 
@@ -50,15 +51,17 @@
   }
 
   &__header > p {
-    align-self: end;
+    align-self: start;
 
-    max-width: 300px;
+    max-width: 600px;
+    place-self: left;
+    text-align: left;
 
     margin: 0;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 14px;
+    font-size: 16px;
 
     line-height: 1.7;
 
@@ -104,15 +107,10 @@
   &__item-info {
     span {
       display: block;
-
       margin-bottom: 8px;
-
       font-size: 10px;
-
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
-
       opacity: 0.4;
     }
 
@@ -131,15 +129,11 @@
     }
 
     p {
-      max-width: 400px;
-
       margin: 0;
-
       font-size: 13px;
-
       line-height: 1.6;
-
       color: rgba(255, 255, 255, 0.5);
+      text-align: center;
     }
   }
 

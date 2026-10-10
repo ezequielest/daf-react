@@ -17,10 +17,10 @@ export interface EquipmentItem {
 const equipment: EquipmentItem[] = [
   {
     number: "01",
-    name: "Compact",
+    name: "DAF Compact",
     category: "Secabotas",
     description:
-      "Una solución compacta y eficiente para el secado individual.",
+      "Ideal para pequeños espacios y dotaciones. Botas y guantes.",
     capacity: "XX pares",
     power: "XXX W",
     dimensions: "XXX × XXX × XXX mm",
@@ -33,10 +33,10 @@ const equipment: EquipmentItem[] = [
   },
   {
     number: "02",
-    name: "Slim",
+    name: "DAF Slim",
     category: "Secabotas",
     description:
-      "Diseñado para optimizar el espacio sin resignar capacidad.",
+      "Diseño de una sola cara para instalar contra pared y aprovechar al máximo el espacio.",
     capacity: "XX pares",
     power: "XXX W",
     dimensions: "XXX × XXX × XXX mm",
@@ -49,26 +49,25 @@ const equipment: EquipmentItem[] = [
   },
   {
     number: "03",
-    name: "Dual",
+    name: "DAF Dual",
     category: "Secabotas",
     description:
-      "Mayor capacidad para espacios de trabajo con alta demanda.",
+      "Diseño de doble cara para maximizar la capacidad de secado en el menor espacio.",
     capacity: "XX pares",
     power: "XXX W",
     dimensions: "XXX × XXX × XXX mm",
     features: [
       "Alta capacidad",
-      "Funcionamiento simultáneo",
-      "Construcción industrial",
+      "Diseño de doble cara para maximizar la capacidad de secado en el menor espacio.",
     ],
     modelUrl: "models/secabotas.fbx",
   },
   {
     number: "04",
-    name: "Cabinet",
+    name: "DAF Cabinet",
     category: "Secado industrial",
     description:
-      "Una solución integral para el secado de múltiples equipos.",
+      "Cabina de secado para equipos completos, diseñada para un secado uniforme e higiénico.",
     capacity: "XX unidades",
     power: "XXX W",
     dimensions: "XXX × XXX × XXX mm",
@@ -77,7 +76,7 @@ const equipment: EquipmentItem[] = [
       "Secado integral",
       "Diseño industrial",
     ],
-    modelUrl: "models/cabinet.fbx",
+    modelUrl: "models/cabinet-b.fbx",
   },
 ];
 
@@ -96,23 +95,17 @@ function Equipment() {
   return (
     <>
       <section className="equipment" id="equipamientos">
+        <span className="equipment__number">
+          03 / EQUIPAMIENTOS
+        </span>
         <div className="equipment__header">
-          <span className="equipment__number">
-            03 / EQUIPOS
-          </span>
 
           <h2>
-            Equipamiento
-            <br />
-            para cada
-            <br />
-            necesidad.
+          Soluciones para <br></br> cada necesidad 
           </h2>
 
           <p>
-            Soluciones de secado desarrolladas para
-            adaptarse a diferentes espacios, capacidades
-            y necesidades operativas.
+            Desde equipos compactos hasta soluciones de alta capacidad, desarrollamos equipamiento para el secado de calzado, guantes, indumentaria y elementos de protección personal.
           </p>
         </div>
 

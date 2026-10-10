@@ -17,14 +17,11 @@ const Hero = () => {
             FABRICACIÓN DE EQUIPOS DE SECADO
           </span>
 
-          <h1>
-            Secado
-            <span> eficiente.</span>
-            <br />
-            Equipamiento
-            <br />
-            profesional.
-          </h1>
+          <h1>Equipamiento industrial
+          <br></br> 
+          <span>Secado 
+          <br></br>
+          eficiente</span>.</h1>
 
           <p>
             Diseñamos y fabricamos soluciones de secado para
@@ -45,11 +42,6 @@ const Hero = () => {
         </div>
 
         <div className="hero__product">
-
-          <div className="hero__product-label">
-            <span>01</span>
-            SECABOTAS
-          </div>
 
           <div className="hero__product-placeholder">
             <TresDDisplayFBX url="models/secabotas.fbx" 

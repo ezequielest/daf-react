@@ -12,7 +12,7 @@
   &__header {
     display: grid;
 
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr;
 
     gap: 40px;
 
@@ -31,9 +31,11 @@
     h2 {
       margin: 0;
 
+      color: #111;
+
       font-family: "Bebas Neue", sans-serif;
 
-      font-size: clamp(80px, 9vw, 142px);
+      font-size: clamp(48px, 6vw, 76px);
 
       font-weight: 400;
 
@@ -57,10 +59,25 @@
     }
   }
 
+  &__number {
+    align-self: start;
+    margin-bottom: 80px;
+    display: block;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    opacity: 0.45;
+  }
+
   &__content {
     display: grid;
 
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
 
     gap: 80px;
 
@@ -322,6 +339,248 @@
     &__stats {
       strong {
         font-size: 55px;
+      }
+    }
+  }
+}
+
+.after-sales {
+  width: 100%;
+
+  padding: 160px 8vw;
+
+  background: #111;
+
+  color: #fff;
+
+  &__header {
+    display: grid;
+
+    grid-template-columns: 1fr 2fr 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 120px;
+
+    > span {
+      font-size: 11px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      opacity: 0.4;
+    }
+
+    h2 {
+      margin: 0;
+
+      color: #111;
+
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: clamp(80px, 9vw, 142px);
+
+      font-weight: 400;
+
+      line-height: 0.78;
+
+      text-transform: uppercase;
+    }
+
+    > p {
+      align-self: end;
+
+      max-width: 320px;
+
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__content {
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+
+    gap: 100px;
+  }
+
+  &__intro {
+    position: sticky;
+
+    top: 100px;
+
+    align-self: start;
+
+    max-width: 350px;
+  }
+
+  &__label {
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    color: #c27a0d;
+  }
+
+  &__intro h3 {
+    margin: 0 0 30px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(50px, 5vw, 80px);
+
+    font-weight: 400;
+
+    line-height: 0.85;
+
+    text-transform: uppercase;
+  }
+
+  &__intro p {
+    max-width: 280px;
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  &__services {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  &__service {
+    display: grid;
+
+    grid-template-columns: 60px 1fr 40px;
+
+    gap: 30px;
+
+    align-items: center;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid rgba(26, 25, 25, 0.772);
+
+    transition:
+      padding 0.3s ease,
+      background 0.3s ease;
+
+    &:hover {
+      padding-left: 20px;
+
+      .after-sales__arrow {
+        color: #c27a0d;
+
+        transform: translate(4px, -4px);
+      }
+
+      .after-sales__number {
+        color: #c27a0d;
+      }
+    }
+  }
+
+  &__number {
+    font-size: 10px;
+
+    letter-spacing: 0.1em;
+
+    color: rgba(23, 23, 23, 0.3);
+
+    transition: color 0.3s ease;
+  }
+
+  &__service-content {
+    h4 {
+      margin: 0 0 8px;
+
+      font-family: "Bebas Neue", sans-serif;
+
+      font-size: 32px;
+
+      font-weight: 400;
+
+      line-height: 1;
+    }
+
+    p {
+      max-width: 550px;
+
+      margin: 0;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+
+      color: rgba(22, 21, 21, 0.45);
+    }
+  }
+
+  &__arrow {
+    font-size: 22px;
+
+    color: rgba(17, 17, 17, 0.35);
+
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+}
+
+@media (max-width: 1000px) {
+  .after-sales {
+    &__header {
+      grid-template-columns: 1fr;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+
+      gap: 70px;
+    }
+
+    &__intro {
+      position: static;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .after-sales {
+    padding: 100px 5vw;
+
+    &__service {
+      grid-template-columns: 35px 1fr 20px;
+
+      gap: 15px;
+
+      padding: 25px 0;
+    }
+
+    &__service-content {
+      h4 {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 11px;
       }
     }
   }
