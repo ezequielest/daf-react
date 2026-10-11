@@ -80,9 +80,13 @@ function ProductModal({
             {product.category}
           </span>
 
-          <h2 id="product-modal-title">
+          <span className="product-modal__title">
             {product.name}
-          </h2>
+          </span>
+
+          <span className="product-modal__image">
+            <img src={product.image} alt={product.name} />
+          </span>
 
           <p className="product-modal__description">
             {product.description}

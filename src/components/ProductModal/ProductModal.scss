@@ -1,21 +1,13 @@
 .product-modal {
   position: fixed;
-
   inset: 0;
-
   z-index: 1000;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   padding: 40px;
-
   background: rgba(0, 0, 0, 0.65);
-
   backdrop-filter: blur(12px);
-
   animation: modalFadeIn 0.3s ease;
 
   &__content {
@@ -36,6 +28,23 @@
     color: #111;
 
     animation: modalSlideIn 0.35s ease;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      max-height: 90vh;
+      overflow-y: scroll;
+    }
+  }
+
+  &__title {
+    margin: 0 0 25px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(40px, 8vw, 82px);
+
+    color: #111;
+    font-weight: 800;
   }
 
   &__close {
@@ -76,9 +85,7 @@
 
   &__visual {
     min-height: 650px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -88,6 +95,10 @@
         #ffffff 0%,
         #e8e8e8 70%
       );
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
   }
 
   &__placeholder {
@@ -140,6 +151,16 @@
     line-height: 0.8;
 
     text-transform: uppercase;
+  }
+
+  &__image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   &__description {
