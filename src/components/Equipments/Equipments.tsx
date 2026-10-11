@@ -12,7 +12,16 @@ export interface EquipmentItem {
   power: string;
   dimensions: string;
   features: string[];
-  modelUrl: string;
+  modelConfig: ModelConfig
+}
+
+export interface ModelConfig {
+  url: string;
+  modelPosition: [number, number, number];
+  modelRotation: [number, number, number];
+  modelScale: number;
+  modelPivot: [number, number, number];
+  rotationSpeed: number;
 }
 
 const equipment: EquipmentItem[] = [
@@ -31,7 +40,15 @@ const equipment: EquipmentItem[] = [
       "Secado eficiente",
       "Construcción resistente",
     ],
-    modelUrl: "models/compact-b.fbx",
+    modelConfig: {
+      url: "models/compact-b.fbx",
+      modelPosition: [0, -110, 0],
+      modelRotation: [0, Math.PI / 4 , 0],
+      modelScale: 1,
+      modelPivot: [0, 0, 0],
+      rotationSpeed: 0.005
+    }
+   
   },
   {
     number: "02",
@@ -48,7 +65,14 @@ const equipment: EquipmentItem[] = [
       "Optimización del espacio",
       "Secado eficiente",
     ],
-    modelUrl: "models/slim-b.fbx",
+    modelConfig: {
+      url: "models/slim-b.fbx",
+      modelPosition: [0, -110, 0],
+      modelRotation: [0, Math.PI / 4 , 0],
+      modelScale: 1,
+      modelPivot: [0, 0, 0],
+      rotationSpeed: 0.005
+    }
   },
   {
     number: "03",
@@ -64,7 +88,14 @@ const equipment: EquipmentItem[] = [
       "Alta capacidad",
       "Diseño de doble cara para maximizar la capacidad de secado en el menor espacio.",
     ],
-    modelUrl: "models/secabotas.fbx",
+    modelConfig: {
+      url: "models/secabotas.fbx",
+      modelPosition: [0, -220, 0],
+      modelRotation: [0, Math.PI / 4 , 0],
+      modelScale: 1,
+      modelPivot: [-42.6866, -1.8881, 34.6906],
+      rotationSpeed: 0.005
+    }
   },
   {
     number: "04",
@@ -81,7 +112,14 @@ const equipment: EquipmentItem[] = [
       "Secado integral",
       "Diseño industrial",
     ],
-    modelUrl: "models/cabinet-b.fbx",
+    modelConfig: {
+      url: "models/cabinet-b.fbx",
+      modelPosition: [120, 1020, 220],
+      modelRotation: [0, Math.PI / 2 , 0],
+      modelScale: 0.15,
+      modelPivot: [0, 0, 0],
+      rotationSpeed: 0
+    }
   },
 ];
 

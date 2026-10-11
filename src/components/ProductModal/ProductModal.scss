@@ -128,7 +128,7 @@
   &__category {
     display: block;
 
-    margin-bottom: 15px;
+    margin-bottom: 22px;
 
     font-size: 11px;
 
@@ -154,13 +154,18 @@
   }
 
   &__image {
-    display: block;
+
+    display: none;
 
     width: 100%;
     height: auto;
 
     margin-top: 25px;
     margin-bottom: 25px;
+
+    @media (max-width: 1024px) {
+      display: block;
+    }
   }
 
   &__description {

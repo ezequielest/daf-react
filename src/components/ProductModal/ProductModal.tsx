@@ -66,12 +66,12 @@ function ProductModal({
         <div className="product-modal__visual">
           <div className="product-modal__placeholder">
               <TresDDisplayFBX 
-                url={product.modelUrl}
-                modelPosition={[0, -220, 0]}
-                modelRotation={[0, Math.PI / 4 , 0]}
-                modelScale={1}
-                modelPivot={[-42.6866, -1.8881, 34.6906]}
-                rotationSpeed={0.005}/>
+                url={product.modelConfig.url}
+                modelPosition={product.modelConfig.modelPosition}
+                modelRotation={product.modelConfig.modelRotation}
+                modelScale={product.modelConfig.modelScale}
+                modelPivot={product.modelConfig.modelPivot}
+                rotationSpeed={product.modelConfig.rotationSpeed}/>
           </div>
         </div>
 
