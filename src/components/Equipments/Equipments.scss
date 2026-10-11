@@ -94,6 +94,15 @@
 
       background: rgba(255, 255, 255, 0.025);
     }
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px 0;
+
+
+   
+    }
   }
 
   &__item-number {
@@ -156,6 +165,10 @@
     border: 0;
     border-radius: 2px;
     color: #fff;
+
+    @media (max-width: 1024px) {
+      justify-content: center;
+    }
   }
 
   &__arrow {

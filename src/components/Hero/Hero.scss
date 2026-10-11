@@ -153,6 +153,10 @@ a {
     align-items: center;
 
     height: 600px;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 
   &__product-label {
