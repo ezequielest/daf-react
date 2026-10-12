@@ -25,8 +25,6 @@
 
     background: #f5f5f5;
 
-    color: #111;
-
     animation: modalSlideIn 0.35s ease;
 
     @media (max-width: 1024px) {
@@ -38,11 +36,8 @@
 
   &__title {
     margin: 0 0 25px;
-
     font-family: "Bebas Neue", sans-serif;
-
     font-size: clamp(40px, 8vw, 82px);
-
     color: #111;
     font-weight: 800;
   }
@@ -89,12 +84,12 @@
     align-items: center;
     justify-content: center;
 
-    background:
+    /*background:
       radial-gradient(
         circle at center,
         #ffffff 0%,
         #e8e8e8 70%
-      );
+      );*/
 
       @media (max-width: 1024px) {
         display: none;
@@ -162,6 +157,10 @@
 
     margin-top: 25px;
     margin-bottom: 25px;
+
+    img {
+      max-width: 100px;
+    }
 
     @media (max-width: 1024px) {
       display: block;
